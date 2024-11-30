@@ -28,12 +28,15 @@ jobs:
         with:
           node-version: 18
           cache: npm
+          registry-url: https://registry.npmmirror.com
       
       - name: Setup Pages
         uses: actions/configure-pages@v4
       
       - name: Install dependencies
-        run: npm ci
+        run: |
+          npm config set registry https://registry.npmmirror.com
+          npm ci
       
       - name: Build
         run: npm run docs:build
