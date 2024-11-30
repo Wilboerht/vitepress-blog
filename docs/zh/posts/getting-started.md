@@ -36,6 +36,6 @@ tags: ['指南', '入门']
 
 ## 下一步
 
-- 查看更多[博客文章](/zh/posts/)
-- 了解[关于我](/zh/about)
+- 查看更多[博客文章](/vitepress-blog/zh/posts/)
+- 了解[关于我](/vitepress-blog/zh/about)
 - 访问 [GitHub](https://github.com)
