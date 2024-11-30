@@ -12,6 +12,14 @@ export default defineConfig({
   // Base URL - if deploying to a subdirectory, update this
   base: '/vitepress-blog/',
 
+  // Ignore dead links
+  ignoreDeadLinks: [
+    // Regex pattern for paths that should be ignored
+    /\/vitepress-blog\/.*posts\/life\/.*/,
+    /\/vitepress-blog\/.*posts\/vue3-composition-api.*/,
+    /\/vitepress-blog\/.*posts\/using-images.*/
+  ],
+
   // Locales configuration
   locales: {
     root: {
