@@ -105,7 +105,7 @@ export default {
 
 ### Images
 
-![Vue Logo](/assets/images/vue-logo.png)
+![Vue Logo](/images/common/vue-logo.svg)
 
 ### Custom Containers
 
