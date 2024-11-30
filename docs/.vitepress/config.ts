@@ -10,7 +10,7 @@ export default defineConfig({
   lang: 'en',
   
   // Base URL - if deploying to a subdirectory, update this
-  base: '/',
+  base: '/vitepress-blog/',
 
   // Locales configuration
   locales: {
