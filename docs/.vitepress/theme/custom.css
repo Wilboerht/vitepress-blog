@@ -1,0 +1,139 @@
+/* 自定义背景 */
+:root {
+  --vp-home-hero-image-background-image: linear-gradient(
+    -45deg,
+    rgba(189, 52, 254, 0.5) 15%,
+    rgba(146, 84, 222, 0.5) 30%,
+    rgba(64, 169, 255, 0.5) 70%,
+    rgba(71, 202, 255, 0.5) 85%
+  );
+  --vp-home-hero-image-filter: blur(40px);
+}
+
+/* 适配深色模式 */
+.dark {
+  --vp-home-hero-image-background-image: linear-gradient(
+    -45deg,
+    rgba(189, 52, 254, 0.3) 15%,
+    rgba(146, 84, 222, 0.3) 30%,
+    rgba(64, 169, 255, 0.3) 70%,
+    rgba(71, 202, 255, 0.3) 85%
+  );
+}
+
+/* 主页背景 - 限制在主要内容区域 */
+.VPHome .VPHero {
+  position: relative;
+  overflow: hidden;
+}
+
+/* 渐变背景效果 */
+.VPHome .VPHero::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  background: 
+    radial-gradient(
+      circle at center,
+      rgba(var(--vp-c-brand-lighter), 0.01),
+      rgba(var(--vp-c-brand), 0.01)
+    ),
+    linear-gradient(
+      135deg,
+      rgba(189, 52, 254, 0.02) 0%,
+      rgba(146, 84, 222, 0.02) 30%,
+      rgba(64, 169, 255, 0.02) 70%,
+      rgba(71, 202, 255, 0.02) 100%
+    );
+  filter: blur(35px);
+  z-index: -1;
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+/* 动态光晕效果 */
+.VPHome .VPHero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 75% 25%, rgba(189, 52, 254, 0.01), transparent 8%),
+    radial-gradient(circle at 25% 75%, rgba(71, 202, 255, 0.01), transparent 8%),
+    radial-gradient(circle at 65% 35%, rgba(146, 84, 222, 0.01), transparent 6%),
+    radial-gradient(circle at 35% 65%, rgba(64, 169, 255, 0.01), transparent 6%);
+  z-index: -1;
+  opacity: 0.25;
+  animation: pulse 18s ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.25;
+  }
+  100% {
+    transform: scale(1.015);
+    opacity: 0.1;
+  }
+}
+
+/* 为卡片添加柔和的玻璃效果 */
+.VPFeature {
+  background: rgba(255, 255, 255, 0.02) !important;
+  backdrop-filter: blur(10px) !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05),
+              0 2px 4px -1px rgba(0, 0, 0, 0.03) !important;
+}
+
+.dark .VPFeature {
+  background: rgba(0, 0, 0, 0.02) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+              0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+}
+
+.VPFeature:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.05) !important;
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.08),
+              0 4px 10px -5px rgba(0, 0, 0, 0.05) !important;
+}
+
+.dark .VPFeature:hover {
+  background: rgba(255, 255, 255, 0.03) !important;
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.2),
+              0 4px 10px -5px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* 优化卡片内容样式 */
+.VPFeature .icon {
+  transition: transform 0.3s ease !important;
+}
+
+.VPFeature:hover .icon {
+  transform: scale(1.05);
+}
+
+.VPFeature .title {
+  transition: color 0.3s ease !important;
+}
+
+.VPFeature:hover .title {
+  color: var(--vp-c-brand) !important;
+}
+
+.VPFeature .details {
+  transition: opacity 0.3s ease !important;
+}
+
+.VPFeature:hover .details {
+  opacity: 0.9;
+}
