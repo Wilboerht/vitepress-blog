@@ -36,6 +36,6 @@ Welcome to my blog! This is a blog website built with VitePress.
 
 ## Next Steps
 
-- Browse more [Blog Posts](/vitepress-blog/posts/)
-- Learn [About Me](/vitepress-blog/about)
+- Browse more [Blog Posts](./index.md)
+- Learn [About Me](../about.md)
 - Visit [GitHub](https://github.com)

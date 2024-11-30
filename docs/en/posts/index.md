@@ -9,9 +9,9 @@ Welcome to my blog! Here you'll find all my posts about technology, programming,
 
 ## Latest Posts
 
-- [Getting Started](/vitepress-blog/posts/getting-started)
-- [Markdown Examples](/vitepress-blog/posts/markdown-examples)
+- [Getting Started](../../posts/getting-started.md)
+- [Markdown Examples](../../posts/markdown-examples.md)
 
 ## Categories
 
-- [Life Stories](/vitepress-blog/posts/life/)
+- [Life Stories](./life/index.md)

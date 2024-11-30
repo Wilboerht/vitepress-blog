@@ -36,8 +36,8 @@ Hello! I'm a passionate developer who loves technology. I enjoy exploring new te
 
 ## Blog Categories
 
-- [Technical Blog](/vitepress-blog/posts/)
-- [Life Stories](/vitepress-blog/posts/life/)
+- [Technical Blog](./posts/index.md)
+- [Life Stories](./posts/life/index.md)
 
 ## Interests
 
