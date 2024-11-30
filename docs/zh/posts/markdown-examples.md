@@ -105,7 +105,7 @@ export default {
 
 ### 图片展示
 
-![Vue Logo](/assets/images/vue-logo.png)
+![Vue Logo](/images/common/vue-logo.svg)
 
 ### 自定义容器
 
