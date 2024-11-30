@@ -36,8 +36,8 @@ aside: false
 
 ## 文章分类
 
-- [技术博客](/zh/posts/)
-- [生活随笔](/zh/posts/life/)
+- [技术博客](/vitepress-blog/zh/posts/)
+- [生活随笔](/vitepress-blog/zh/posts/life/)
 
 ## 爱好特长
 
