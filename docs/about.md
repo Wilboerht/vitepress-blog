@@ -36,8 +36,8 @@ Hello! I'm a passionate developer who loves technology. I enjoy exploring new te
 
 ## Blog Categories
 
-- [Technical Blog](/en/posts/)
-- [Life Stories](/en/posts/life/)
+- [Technical Blog](/posts/)
+- [Life Stories](/posts/life/)
 
 ## Interests
 
