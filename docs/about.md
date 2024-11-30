@@ -39,6 +39,9 @@ Hello! I'm a passionate developer who loves technology. I enjoy exploring new te
 - [Technical Blog](./posts/index.md)
 - [Life Stories](./posts/life/index.md)
 
+## Test
+This is a test line to demonstrate the update process.
+
 ## Interests
 
 Besides programming, I also enjoy:
