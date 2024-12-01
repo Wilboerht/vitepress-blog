@@ -16,6 +16,7 @@
     "security:audit": "npm audit --audit-level=high",
     "security:outdated": "npm outdated",
     "security:check": "node scripts/security-check.js",
+    "security:full": "npm run security:audit && npm run security:outdated && npm run security:check",
     "preinstall": "npx npm-force-resolutions"
   },
   "keywords": ["blog", "vitepress", "vue", "tech", "programming", "personal-blog"],

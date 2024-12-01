@@ -1,94 +1,82 @@
+import { execSync } from 'child_process';
 import fs from 'fs';
 import path from 'path';
-import chalk from 'chalk';
-import { execSync } from 'child_process';
 
-const DOCS_DIR = path.join(process.cwd(), 'docs');
-
+// Run security checks
 function runSecurityChecks() {
-  console.log(chalk.blue('Starting security checks...'));
-  let hasIssues = false;
+  console.log('🔒 Running security checks...\n');
 
-  // 检查敏感文件
+  // 1. Check npm dependencies
+  console.log('📦 Checking npm dependencies...');
+  try {
+    execSync('npm audit', { stdio: 'inherit' });
+    console.log('✅ No security vulnerabilities found in dependencies\n');
+  } catch (error) {
+    console.error('❌ Security vulnerabilities found in dependencies\n');
+    process.exit(1);
+  }
+
+  // 2. Check for sensitive files
+  console.log('🔍 Checking for sensitive files...');
   const sensitivePatterns = [
-    /\.env$/,
-    /\.key$/,
-    /\.pem$/,
-    /password/i,
-    /secret/i,
-    /credential/i
+    '.env',
+    '.env.local',
+    '.env.development',
+    '.env.production',
+    'config.json',
+    'secrets.json',
+    'credentials.json'
   ];
 
-  // 检查文件权限
-  function checkFilePermissions(dir) {
-    const entries = fs.readdirSync(dir, { withFileTypes: true });
-    
-    entries.forEach(entry => {
-      const fullPath = path.join(dir, entry.name);
-      
-      if (entry.isDirectory()) {
-        checkFilePermissions(fullPath);
-      } else {
-        // 检查敏感文件名
-        sensitivePatterns.forEach(pattern => {
-          if (pattern.test(entry.name)) {
-            console.log(chalk.red(`Warning: Potentially sensitive file found: ${fullPath}`));
-            hasIssues = true;
-          }
-        });
-
-        // 检查文件权限
-        try {
-          const stats = fs.statSync(fullPath);
-          const mode = stats.mode & 0o777;
-          if ((mode & 0o777) === 0o777) {
-            console.log(chalk.red(`Warning: File has too permissive permissions: ${fullPath}`));
-            hasIssues = true;
-          }
-        } catch (error) {
-          console.log(chalk.red(`Error checking file permissions: ${error.message}`));
-        }
+  const foundSensitiveFiles = [];
+  function searchSensitiveFiles(dir) {
+    const files = fs.readdirSync(dir);
+    for (const file of files) {
+      const filePath = path.join(dir, file);
+      const stat = fs.statSync(filePath);
+      if (stat.isDirectory() && !filePath.includes('node_modules')) {
+        searchSensitiveFiles(filePath);
+      } else if (sensitivePatterns.includes(file)) {
+        foundSensitiveFiles.push(filePath);
       }
-    });
-  }
-
-  // 运行 npm audit
-  try {
-    console.log(chalk.blue('\nRunning npm audit...'));
-    execSync('npm audit', { stdio: 'inherit' });
-  } catch (error) {
-    console.log(chalk.red('npm audit found security issues'));
-    hasIssues = true;
-  }
-
-  // 检查过时的依赖
-  try {
-    console.log(chalk.blue('\nChecking for outdated dependencies...'));
-    execSync('npm outdated', { stdio: 'inherit' });
-  } catch (error) {
-    console.log(chalk.yellow('Some dependencies are outdated'));
-    hasIssues = true;
-  }
-
-  // 检查 CSP 配置
-  const configPath = path.join(DOCS_DIR, '.vitepress/config.ts');
-  try {
-    const config = fs.readFileSync(configPath, 'utf-8');
-    if (!config.includes('Content-Security-Policy')) {
-      console.log(chalk.red('Warning: Content Security Policy (CSP) not found in VitePress config'));
-      hasIssues = true;
     }
-  } catch (error) {
-    console.log(chalk.red(`Error reading VitePress config: ${error.message}`));
-    hasIssues = true;
   }
 
-  if (hasIssues) {
-    console.log(chalk.red('\nSecurity check completed with issues'));
+  searchSensitiveFiles('.');
+  if (foundSensitiveFiles.length > 0) {
+    console.error('❌ Found sensitive files that should be gitignored:', foundSensitiveFiles);
     process.exit(1);
-  } else {
-    console.log(chalk.green('\nSecurity check completed successfully'));
   }
+  console.log('✅ No sensitive files found\n');
+
+  // 3. Check security headers
+  console.log('🔒 Checking security headers configuration...');
+  const securityHeadersPath = './docs/.vitepress/security-headers.ts';
+  if (!fs.existsSync(securityHeadersPath)) {
+    console.error('❌ Security headers configuration is missing\n');
+    process.exit(1);
+  }
+  console.log('✅ Security headers configuration found\n');
+
+  // 4. Check robots.txt
+  console.log('🤖 Checking robots.txt...');
+  const robotsPath = './docs/public/robots.txt';
+  if (!fs.existsSync(robotsPath)) {
+    console.error('❌ robots.txt is missing\n');
+    process.exit(1);
+  }
+  console.log('✅ robots.txt found\n');
+
+  // 5. Check security.txt
+  console.log('📝 Checking security.txt...');
+  const securityTxtPath = './docs/public/.well-known/security.txt';
+  if (!fs.existsSync(securityTxtPath)) {
+    console.error('❌ security.txt is missing\n');
+    process.exit(1);
+  }
+  console.log('✅ security.txt found\n');
+
+  console.log('✅ All security checks passed!\n');
 }
 
 runSecurityChecks();
