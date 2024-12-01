@@ -3,8 +3,8 @@ import { defineConfig } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   // Site settings
-  title: "My Blog",
-  description: "A VitePress Blog",
+  title: "Wilboerht's Blog",
+  description: "A personal blog about technology, life, and everything in between",
   
   // Default locale config
   lang: 'en',

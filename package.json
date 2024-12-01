@@ -1,8 +1,8 @@
 {
   "$schema": "./package.schema.json",
-  "name": "my-blog",
+  "name": "wilboerht-blog",
   "version": "1.0.0",
-  "description": "My Personal Blog powered by VitePress",
+  "description": "Wilboerht's personal blog - Sharing thoughts on technology, programming, and life",
   "type": "module",
   "main": "index.js",
   "scripts": {
@@ -18,11 +18,11 @@
     "security:check": "node scripts/security-check.js",
     "preinstall": "npx npm-force-resolutions"
   },
-  "keywords": ["blog", "vitepress", "vue"],
+  "keywords": ["blog", "vitepress", "vue", "tech", "programming", "personal-blog"],
   "author": {
-    "name": "Vitepress Blog Author",
-    "email": "your.email@example.com",
-    "url": "https://your-website.com"
+    "name": "Wilboerht",
+    "email": "hongkunw2002@gmail.com",
+    "url": "https://wilboerht.github.io/vitepress-blog"
   },
   "license": "MIT",
   "dependencies": {

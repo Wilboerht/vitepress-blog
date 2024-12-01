@@ -1,10 +1,19 @@
-# My VitePress Blog
+# Wilboerht's Blog
 
-这是一个基于 VitePress 的个人博客项目，支持中英文双语。
+🌟 Welcome to my personal blog! This is a bilingual blog built with VitePress, where I share my thoughts on technology, programming, and life.
 
-This is a personal blog project based on VitePress, supporting both Chinese and English.
+欢迎来到我的个人博客！这是一个使用 VitePress 构建的双语博客，我在这里分享关于技术、编程和生活的思考。
 
-## 项目结构 Project Structure
+## ✨ Features
+
+- 📝 Bilingual content (English & Chinese)
+- 🎨 Clean and modern design
+- 🚀 Fast and SEO-friendly
+- 📱 Mobile responsive
+- 🔍 Full-text search
+- 🌙 Dark mode support
+
+## 🗂 Project Structure
 
 ```
 .
@@ -28,7 +37,7 @@ This is a personal blog project based on VitePress, supporting both Chinese and 
 └── package-lock.json
 ```
 
-## 开发说明 Development Guide
+## 🚀 Quick Start
 
 ### 环境要求 Requirements
 
@@ -241,3 +250,5 @@ docs/
 ## 许可证 License
 
 MIT
+
+```
