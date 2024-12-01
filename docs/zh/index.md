@@ -1,6 +1,7 @@
 ---
 layout: home
 title: 我的博客
+date: 2024-01-25
 hero:
   name: 我的博客
   text: 使用 VitePress 搭建的个人博客

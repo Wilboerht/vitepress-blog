@@ -96,11 +96,17 @@ export default defineConfig({
     }
   },
 
-  // Theme related configurations
+  // Security headers
   head: [
+    ['meta', { 'http-equiv': 'Content-Security-Policy', content: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:;" }],
+    ['meta', { 'http-equiv': 'X-Content-Type-Options', content: 'nosniff' }],
+    ['meta', { 'http-equiv': 'X-Frame-Options', content: 'SAMEORIGIN' }],
+    ['meta', { 'http-equiv': 'X-XSS-Protection', content: '1; mode=block' }],
+    ['meta', { name: 'referrer', content: 'strict-origin-when-cross-origin' }],
     ['link', { rel: 'icon', href: '/images/common/blog-logo.png' }]
   ],
 
+  // Theme related configurations
   themeConfig: {
     // Logo in the navigation bar
     logo: '/images/common/blog-logo.png',

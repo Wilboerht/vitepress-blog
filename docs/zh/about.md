@@ -1,6 +1,7 @@
 ---
 title: 关于我
 description: 个人简介和联系方式
+date: 2024-01-25
 aside: false
 ---
 

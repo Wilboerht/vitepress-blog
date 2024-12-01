@@ -1,4 +1,5 @@
 {
+  "$schema": "./package.schema.json",
   "name": "my-blog",
   "version": "1.0.0",
   "description": "My Personal Blog powered by VitePress",
@@ -9,10 +10,20 @@
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs",
     "docs:clean": "rimraf docs/.vitepress/dist docs/.vitepress/cache",
-    "verify": "node scripts/verify-assets.js"
+    "verify": "node scripts/verify-assets.js",
+    "docs:validate": "node scripts/validate-docs.js",
+    "docs:validate-links": "node scripts/validate-links.js",
+    "security:audit": "npm audit --audit-level=high",
+    "security:outdated": "npm outdated",
+    "security:check": "node scripts/security-check.js",
+    "preinstall": "npx npm-force-resolutions"
   },
   "keywords": ["blog", "vitepress", "vue"],
-  "author": "",
+  "author": {
+    "name": "Vitepress Blog Author",
+    "email": "your.email@example.com",
+    "url": "https://your-website.com"
+  },
   "license": "MIT",
   "dependencies": {
     "chalk": "^4.1.2"

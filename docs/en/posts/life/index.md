@@ -1,6 +1,7 @@
 ---
 title: Life Stories
 description: Personal life stories and experiences
+date: 2024-01-25
 ---
 
 # Life Stories

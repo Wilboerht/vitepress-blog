@@ -1,6 +1,7 @@
 ---
 title: Blog Posts
 description: All blog posts
+date: 2024-01-25
 ---
 
 # Blog Posts

@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+Disallow: /private/
+Disallow: /admin/
+Disallow: /api/
+
+# Block known bad bots
+User-agent: Baiduspider
+Disallow: /
+User-agent: YandexBot
+Disallow: /
+
+Sitemap: https://your-domain.com/sitemap.xml
