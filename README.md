@@ -13,28 +13,28 @@
 - 🔍 Full-text search
 - 🌙 Dark mode support
 
-## 🛡️ Security Features
+## 🛡️ 安全特性
 
-- 🔒 Content Security Policy (CSP) headers
-- 🚫 XSS protection enabled
-- 🛑 Clickjacking prevention
-- 📜 Security.txt for responsible disclosure
-- 🤖 Enhanced robots.txt configuration
-- 🔍 Regular security audits
-- 🚧 Strict MIME type checking
-- 🔐 Comprehensive security headers
-- 📝 Automated security checks
+- 🔒 内容安全策略 (CSP) 头部配置
+- 🚫 XSS 攻击防护
+- 🛑 点击劫持防护
+- 📜 安全漏洞报告机制 (security.txt)
+- 🤖 增强的爬虫控制配置
+- 🔍 定期安全审计
+- 🚧 严格的 MIME 类型检查
+- 🔐 全面的安全响应头
+- 📝 自动化安全检查
 
-### Security Scripts
+### 安全脚本
 
 ```bash
-# Run all security checks
+# 运行所有安全检查
 npm run security:full
 
-# Individual checks
-npm run security:audit     # Check dependencies for vulnerabilities
-npm run security:outdated  # Check for outdated packages
-npm run security:check     # Run custom security checks
+# 单独检查
+npm run security:audit     # 检查依赖包漏洞
+npm run security:outdated  # 检查过时的包
+npm run security:check     # 运行自定义安全检查
 ```
 
 ## 🗂 Project Structure
@@ -248,59 +248,59 @@ docs/
 #### 3. 深色模式 Dark Mode
 - 点击右上角主题图标切换
 
-## 🔧 Configuration
+## 🔧 配置说明
 
-The main configuration file is located at `docs/.vitepress/config.ts`. You can customize:
+主要配置文件位于 `docs/.vitepress/config.ts`，你可以自定义：
 
-- Site metadata
-- Navigation
-- Sidebar
-- Themes
-- Localization
-- Security headers (in `security-headers.ts`)
-- And more...
+- 站点元数据
+- 导航菜单
+- 侧边栏
+- 主题设置
+- 多语言
+- 安全头部（在 `security-headers.ts` 中）
+- 更多...
 
-## 🔒 Security Guidelines
+## 🔒 安全指南
 
-### For Contributors
+### 贡献者指南
 
-1. Never commit sensitive information
-   - API keys
-   - Passwords
-   - Private credentials
-   - Environment files (.env)
+1. 禁止提交敏感信息
+   - API 密钥
+   - 密码
+   - 私人凭证
+   - 环境配置文件 (.env)
 
-2. Follow security best practices
-   - Keep dependencies updated
-   - Use HTTPS for external resources
-   - Follow CSP guidelines
-   - Validate user inputs
+2. 遵循安全最佳实践
+   - 保持依赖包更新
+   - 使用 HTTPS 访问外部资源
+   - 遵循 CSP 指南
+   - 验证用户输入
 
-3. Security checks before PR
-   - Run `npm run security:full`
-   - Ensure no sensitive files are included
-   - Check CSP compliance
-   - Verify security headers
+3. PR 前的安全检查
+   - 运行 `npm run security:full`
+   - 确保没有包含敏感文件
+   - 检查 CSP 合规性
+   - 验证安全响应头
 
-### For Administrators
+### 管理员指南
 
-1. Regular maintenance
-   - Run security audits weekly
-   - Update dependencies monthly
-   - Review security headers quarterly
-   - Check for outdated packages
+1. 定期维护
+   - 每周运行安全审计
+   - 每月更新依赖
+   - 每季度检查安全响应头
+   - 检查过时的包
 
-2. Monitor security
-   - GitHub security alerts
-   - npm audit reports
-   - Security.txt compliance
-   - CSP violations
+2. 安全监控
+   - GitHub 安全警报
+   - npm audit 报告
+   - Security.txt 合规性
+   - CSP 违规监控
 
-3. Response procedures
-   - Security issue tracking
-   - Vulnerability disclosure
-   - Patch management
-   - Incident response
+3. 响应流程
+   - 安全问题跟踪
+   - 漏洞披露
+   - 补丁管理
+   - 事件响应
 
 ## 常见问题 FAQ
 
@@ -329,12 +329,12 @@ The main configuration file is located at `docs/.vitepress/config.ts`. You can c
 
 MIT
 
-## 🔗 Links
+## 🔗 相关链接
 
-- Blog: [https://wilboerht.github.io/vitepress-blog](https://wilboerht.github.io/vitepress-blog)
+- 博客: [https://wilboerht.github.io/vitepress-blog](https://wilboerht.github.io/vitepress-blog)
 - GitHub: [https://github.com/Wilboerht/vitepress-blog](https://github.com/Wilboerht/vitepress-blog)
-- Security: [https://wilboerht.github.io/vitepress-blog/.well-known/security.txt](https://wilboerht.github.io/vitepress-blog/.well-known/security.txt)
+- 安全报告: [https://wilboerht.github.io/vitepress-blog/.well-known/security.txt](https://wilboerht.github.io/vitepress-blog/.well-known/security.txt)
 
 ---
 
-Built with ❤️ by [Wilboerht](https://github.com/Wilboerht)
+由 [Wilboerht](https://github.com/Wilboerht) 用 ❤️ 构建
