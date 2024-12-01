@@ -128,11 +128,7 @@ export default defineConfig({
     // Social links
     socialLinks: [
       { icon: 'github', link: 'https://github.com' },
-      { icon: 'twitter', link: 'https://twitter.com/wilboerht' },
-      { icon: 'linkedin', link: 'https://www.linkedin.com/in/wilboerht/' },
-      { icon: "telegram", link: "https://t.me/wilboerht" },
-      { icon: "wechat", link: "weixin://MBs6KyRnyVsuutgdKnAxaCk" },
-      { icon: "gmail", link: "mailto:hongkunw2002@gmail.com" } 
+      { icon: 'twitter', link: 'https://twitter.com/wilboerht' }
     ],
 
     // Search
