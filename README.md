@@ -13,6 +13,30 @@
 - 🔍 Full-text search
 - 🌙 Dark mode support
 
+## 🛡️ Security Features
+
+- 🔒 Content Security Policy (CSP) headers
+- 🚫 XSS protection enabled
+- 🛑 Clickjacking prevention
+- 📜 Security.txt for responsible disclosure
+- 🤖 Enhanced robots.txt configuration
+- 🔍 Regular security audits
+- 🚧 Strict MIME type checking
+- 🔐 Comprehensive security headers
+- 📝 Automated security checks
+
+### Security Scripts
+
+```bash
+# Run all security checks
+npm run security:full
+
+# Individual checks
+npm run security:audit     # Check dependencies for vulnerabilities
+npm run security:outdated  # Check for outdated packages
+npm run security:check     # Run custom security checks
+```
+
 ## 🗂 Project Structure
 
 ```
@@ -224,6 +248,60 @@ docs/
 #### 3. 深色模式 Dark Mode
 - 点击右上角主题图标切换
 
+## 🔧 Configuration
+
+The main configuration file is located at `docs/.vitepress/config.ts`. You can customize:
+
+- Site metadata
+- Navigation
+- Sidebar
+- Themes
+- Localization
+- Security headers (in `security-headers.ts`)
+- And more...
+
+## 🔒 Security Guidelines
+
+### For Contributors
+
+1. Never commit sensitive information
+   - API keys
+   - Passwords
+   - Private credentials
+   - Environment files (.env)
+
+2. Follow security best practices
+   - Keep dependencies updated
+   - Use HTTPS for external resources
+   - Follow CSP guidelines
+   - Validate user inputs
+
+3. Security checks before PR
+   - Run `npm run security:full`
+   - Ensure no sensitive files are included
+   - Check CSP compliance
+   - Verify security headers
+
+### For Administrators
+
+1. Regular maintenance
+   - Run security audits weekly
+   - Update dependencies monthly
+   - Review security headers quarterly
+   - Check for outdated packages
+
+2. Monitor security
+   - GitHub security alerts
+   - npm audit reports
+   - Security.txt compliance
+   - CSP violations
+
+3. Response procedures
+   - Security issue tracking
+   - Vulnerability disclosure
+   - Patch management
+   - Incident response
+
 ## 常见问题 FAQ
 
 1. 图片无法显示？
@@ -251,4 +329,12 @@ docs/
 
 MIT
 
-```
+## 🔗 Links
+
+- Blog: [https://wilboerht.github.io/vitepress-blog](https://wilboerht.github.io/vitepress-blog)
+- GitHub: [https://github.com/Wilboerht/vitepress-blog](https://github.com/Wilboerht/vitepress-blog)
+- Security: [https://wilboerht.github.io/vitepress-blog/.well-known/security.txt](https://wilboerht.github.io/vitepress-blog/.well-known/security.txt)
+
+---
+
+Built with ❤️ by [Wilboerht](https://github.com/Wilboerht)
