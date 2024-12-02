@@ -21,15 +21,15 @@ features:
   - icon: 📝
     title: 技术博客
     details: 分享技术经验和学习心得
-    link: /zh/posts/
+    link: /zh/posts/tech/
   - icon: 🌟
     title: 生活随笔
     details: 记录生活点滴，分享个人感悟
-    link: /zh/posts/
+    link: /zh/posts/life/
   - icon: 🎯
     title: 项目展示
     details: 展示个人项目和作品集
-    link: /zh/posts/
+    link: /zh/posts/tech/
 ---
 
 <div class="custom-layout">

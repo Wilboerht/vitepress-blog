@@ -20,15 +20,15 @@ features:
   - icon: 📝
     title: Tech Blog
     details: Share technical experience and learning insights
-    link: /posts/
+    link: /posts/tech/
   - icon: 🌟
     title: Life Notes
     details: Record life moments and personal thoughts
-    link: /posts/
+    link: /posts/life/
   - icon: 🎯
     title: Projects
     details: Showcase personal projects and portfolio
-    link: /posts/
+    link: /posts/tech/
 ---
 
 <div class="custom-layout">

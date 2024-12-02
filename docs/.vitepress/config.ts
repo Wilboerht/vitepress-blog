@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import type { DefaultTheme } from 'vitepress/theme'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -29,11 +30,17 @@ export default defineConfig({
       themeConfig: {
         nav: [
           { text: 'Home', link: '/' },
-          { text: 'Blog', link: '/posts/' },
+          { 
+            text: 'Blog',
+            items: [
+              { text: 'Tech', link: '/posts/tech/' },
+              { text: 'Life', link: '/posts/life/' }
+            ]
+          },
           { text: 'About', link: '/about' }
         ],
         sidebar: {
-          '/posts/': [
+          '/posts/tech/': [
             {
               text: 'Getting Started',
               items: [
@@ -43,9 +50,17 @@ export default defineConfig({
               ]
             },
             {
-              text: 'Technical Blog',
+              text: 'Vue.js',
               items: [
                 { text: 'Vue 3 Composition API Guide', link: '/posts/vue3-composition-api' }
+              ]
+            }
+          ],
+          '/posts/life/': [
+            {
+              text: 'Life Stories',
+              items: [
+                { text: 'Latest Stories', link: '/posts/life/' }
               ]
             }
           ]
@@ -59,11 +74,17 @@ export default defineConfig({
       themeConfig: {
         nav: [
           { text: '首页', link: '/zh/' },
-          { text: '博客', link: '/zh/posts/' },
+          { 
+            text: '博客',
+            items: [
+              { text: '技术', link: '/zh/posts/tech/' },
+              { text: '生活', link: '/zh/posts/life/' }
+            ]
+          },
           { text: '关于', link: '/zh/about' }
         ],
         sidebar: {
-          '/zh/posts/': [
+          '/zh/posts/tech/': [
             {
               text: '入门指南',
               items: [
@@ -73,9 +94,17 @@ export default defineConfig({
               ]
             },
             {
-              text: '技术博客',
+              text: 'Vue.js',
               items: [
                 { text: 'Vue 3 组合式 API 入门指南', link: '/zh/posts/vue3-composition-api' }
+              ]
+            }
+          ],
+          '/zh/posts/life/': [
+            {
+              text: '生活随笔',
+              items: [
+                { text: '最新文章', link: '/zh/posts/life/' }
               ]
             }
           ]
@@ -98,23 +127,32 @@ export default defineConfig({
 
   // Security headers
   head: [
-    ['meta', { 'http-equiv': 'Content-Security-Policy', content: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:;" }],
+    ['meta', { 
+      'http-equiv': 'Content-Security-Policy', 
+      content: "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https:;" 
+    }],
     ['meta', { 'http-equiv': 'X-Content-Type-Options', content: 'nosniff' }],
     ['meta', { 'http-equiv': 'X-Frame-Options', content: 'SAMEORIGIN' }],
     ['meta', { 'http-equiv': 'X-XSS-Protection', content: '1; mode=block' }],
     ['meta', { name: 'referrer', content: 'strict-origin-when-cross-origin' }],
-    ['link', { rel: 'icon', href: '/images/common/blog-logo.png' }]
+    ['link', { rel: 'icon', href: '/images/common/vue-logo.svg' }]
   ],
 
   // Theme related configurations
   themeConfig: {
     // Logo in the navigation bar
-    logo: '/images/common/blog-logo.png',
+    logo: '/images/common/vue-logo.svg',
 
     // Add language selection to nav
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Blog', link: '/posts/' },
+      { 
+        text: 'Blog',
+        items: [
+          { text: 'Tech', link: '/posts/tech/' },
+          { text: 'Life', link: '/posts/life/' }
+        ]
+      },
       { text: 'About', link: '/about' },
       {
         text: 'Language',
@@ -194,5 +232,5 @@ export default defineConfig({
       message: 'Released under the MIT License.',
       copyright: 'Copyright 2024-present'
     }
-  }
+  } satisfies DefaultTheme.Config
 })
