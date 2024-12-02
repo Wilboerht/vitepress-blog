@@ -17,9 +17,24 @@
     "security:outdated": "npm outdated",
     "security:check": "node scripts/security-check.js",
     "security:full": "npm run security:audit && npm run security:outdated && npm run security:check",
-    "preinstall": "npx npm-force-resolutions"
+    "preinstall": "npx npm-force-resolutions",
+    "lint": "eslint . --ext .js,.vue",
+    "lint:fix": "eslint . --ext .js,.vue --fix",
+    "format": "prettier --write .",
+    "prepare": "husky install",
+    "test": "vitest",
+    "optimize-images": "node scripts/optimize-images.js",
+    "backup": "node scripts/backup.js",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
   },
-  "keywords": ["blog", "vitepress", "vue", "tech", "programming", "personal-blog"],
+  "keywords": [
+    "blog",
+    "vitepress",
+    "vue",
+    "tech",
+    "programming",
+    "personal-blog"
+  ],
   "author": {
     "name": "Wilboerht",
     "email": "hongkunw2002@gmail.com",
@@ -27,12 +42,32 @@
   },
   "license": "MIT",
   "dependencies": {
-    "chalk": "^4.1.2"
+    "chalk": "^4.1.2",
+    "vitepress": "~1.0.0-rc.40",
+    "vue": "~3.4.15"
   },
   "devDependencies": {
-    "vitepress": "^1.0.0-rc.40",
-    "vue": "^3.4.15",
     "@types/node": "^20.11.0",
-    "rimraf": "^5.0.5"
+    "@typescript-eslint/eslint-plugin": "^6.19.0",
+    "@typescript-eslint/parser": "^6.19.0",
+    "conventional-changelog-cli": "^4.1.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-vue": "^9.19.0",
+    "husky": "^8.0.3",
+    "imagemin": "^8.0.1",
+    "lint-staged": "^15.2.0",
+    "prettier": "^3.2.0",
+    "rimraf": "^5.0.5",
+    "sharp": "^0.33.2",
+    "typescript": "5.7.2",
+    "vitest": "^1.2.0"
+  },
+  "lint-staged": {
+    "*.{js,vue,md}": "eslint --fix",
+    "*.{js,css,md,vue,json}": "prettier --write"
+  },
+  "engines": {
+    "node": ">=16.0.0"
   }
 }
