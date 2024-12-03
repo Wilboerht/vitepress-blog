@@ -54,7 +54,7 @@
     "markdown-it-anchor": "^8.6.7"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^6.1.4",
+    "@testing-library/jest-dom": "^6.6.3",
     "@types/node": "^20.8.7",
     "@vitejs/plugin-vue": "5.2.1",
     "@vue/test-utils": "2.4.1",
