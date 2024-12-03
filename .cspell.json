@@ -1,0 +1,16 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "words": [
+    "giscus",
+    "vitepress",
+    "vitest"
+  ],
+  "ignorePaths": [
+    "node_modules/**",
+    "dist/**",
+    "*.min.*",
+    "package-lock.json",
+    "yarn.lock"
+  ]
+}
